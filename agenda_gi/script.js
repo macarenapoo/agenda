@@ -46,14 +46,11 @@ function cerrarContacto(){
   document.getElementById("modal").classList.remove("modal-open");
 }
 
-
-
 function validarCampos(){
   var nombre = document.getElementById("nombre").value;
   var mail = document.getElementById("email").value;
   var empresa = document.getElementById("empresa").value;
   var telefono = document.getElementById("telefono").value;
-  
   var errores = document.getElementById("errores");
   errores.innerHTML="";
 
@@ -70,7 +67,6 @@ function validarCampos(){
     error.innerHTML="Nombre no puede estar vacío";
     errores.appendChild(error);
     flag = false;
-
 }
 
 if(!sexta){
@@ -87,7 +83,6 @@ if(!sexta){
   flag = false;
 }
 
-
   if(flag){
   contactos.push({ nombre: nombre, empresa: empresa , email: mail , telefono: telefono});
   document.getElementById("modal").classList.add("modal");
@@ -97,8 +92,7 @@ if(!sexta){
   var empresa = document.getElementById("empresa").value="";
   var telefono = document.getElementById("telefono").value="";
   imprimirTodosLosContactos();
-  }
-  
+  } 
 }
 imprimirTodosLosContactos();
 
@@ -108,7 +102,7 @@ function validarLongitud(nombres){
     return true;
 }else{
     return false;
-}
+  }
 }
 
 function validarCampoMail(mail){
@@ -117,7 +111,7 @@ function validarCampoMail(mail){
     return true;
 }else{
     return false;
-}
+  }
 }
 
 function validarLongitudMail(correo){
@@ -134,8 +128,7 @@ if ((correo.charCodeAt(0) >= 65 && correo.charCodeAt(0) <= 90) || (correo.charCo
   return true;
 }else{
   return false;
-}
-
+  }
 }
 
 function validarArroba(correo){
@@ -156,7 +149,7 @@ if (cuantasArrobas == 1){
   }
 }else{
   return false;
-}	
+  }	
 }
 
 function validarDominio(correo){
@@ -171,7 +164,7 @@ if ((correo.length-1 - pos >=2) && (correo.length-1 - pos <=4)){
   return true;
 }else{
   return false;
-}
+  }
 }
 
 function imprimirTodosLosContactos(){
@@ -183,6 +176,3 @@ function eliminarContacto(index){
   contactos.splice(index, 1);
   imprimirTodosLosContactos();
 }
-
-
-
